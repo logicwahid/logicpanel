@@ -243,9 +243,9 @@ class AccountController
 
             // Determine User Panel URL: Use current host but dynamic port
             $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
-            $domain = parse_url('http://' . $host, PHP_URL_HOST);
-            $userPort = $_ENV['USER_PORT'] ?? 767;
-            $userPanelUrlHost = $domain . ':' . $userPort;
+            $domain = parse_url('http://' . $host, PHP_URL_HOST) ?: $host;
+            $userPort = (int)($_ENV['USER_PORT'] ?? 7777);
+            $userPanelUrlHost = ($userPort === 80 || $userPort === 443) ? $domain : ($domain . ':' . $userPort);
 
             $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https')) ? 'https' : 'http';
             $userPanelUrl = $protocol . '://' . $userPanelUrlHost;

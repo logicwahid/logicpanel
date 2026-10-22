@@ -2,6 +2,15 @@
 $page_title = 'System Updates';
 $current_page = 'updates';
 $sidebar_type = 'master';
+
+$sysConfig = [];
+$configFile = __DIR__ . '/../../../../config/settings.json';
+if (file_exists($configFile)) {
+    $sysConfig = json_decode(file_get_contents($configFile), true) ?? [];
+}
+$repoUrl = $_ENV['REPO_URL'] ?? $sysConfig['repo_url'] ?? 'https://github.com/cyber-wahid/logicpanel';
+$docsUrl = $_ENV['DOCS_URL'] ?? $sysConfig['docs_url'] ?? (rtrim($repoUrl, '/') . '#readme');
+
 ob_start();
 ?>
 
@@ -111,11 +120,11 @@ ob_start();
                     LogicPanel is open-source software. Updates are pulled directly from the official GitHub repository.
                 </p>
                 <div style="display: grid; gap: 10px;">
-                    <a href="https://github.com/cyber-wahid/logicpanel" target="_blank" class="btn btn-secondary"
+                    <a href="<?= htmlspecialchars($repoUrl) ?>" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"
                         style="justify-content: center;">
                         <i data-lucide="github"></i> GitHub Repository
                     </a>
-                    <a href="https://docs.logicdock.cloud" target="_blank" class="btn btn-secondary"
+                    <a href="<?= htmlspecialchars($docsUrl) ?>" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"
                         style="justify-content: center;">
                         <i data-lucide="book"></i> Documentation
                     </a>

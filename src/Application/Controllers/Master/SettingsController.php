@@ -182,17 +182,19 @@ class SettingsController
         $secret = $_ENV['JWT_SECRET'] ?? 'secret';
         $token = JWT::encode($payload, $secret, 'HS256');
 
-        // Build gateway URL - uses Apache proxy at /ws/terminal path
+        // Build gateway URL - uses reverse proxy at /ws/terminal path
         $settings = $this->loadSettings();
-        $hostname = $settings['hostname'] ?? $_ENV['APP_DOMAIN'] ?? 'localhost';
-        $masterPort = $settings['master_port'] ?? $_ENV['MASTER_PORT'] ?? '999';
+        $requestHost = $request->getHeaderLine('Host');
+        $detectedHost = !empty($requestHost) ? explode(':', $requestHost)[0] : ($_SERVER['SERVER_NAME'] ?? 'localhost');
+        $hostname = !empty($settings['hostname']) ? $settings['hostname'] : (!empty($_ENV['APP_DOMAIN']) ? $_ENV['APP_DOMAIN'] : $detectedHost);
+        $masterPort = (int) ($settings['master_port'] ?? $_ENV['MASTER_PORT'] ?? 9999);
 
-        // For localhost, use ws:// with gateway port. For production, use wss:// through Apache proxy
+        // For localhost, use ws:// with gateway port. For production, use wss:// through proxy
         if (in_array($hostname, ['localhost', '127.0.0.1'])) {
             $gatewayPort = $_ENV['GATEWAY_PORT'] ?? '3002';
             $gatewayUrl = "ws://{$hostname}:{$gatewayPort}";
         } else {
-            // Use /ws/terminal path through Apache proxy - no extra DNS needed!
+            // Use /ws/terminal path through reverse proxy
             $gatewayUrl = "wss://{$hostname}:{$masterPort}/ws/terminal";
         }
 
@@ -210,8 +212,8 @@ class SettingsController
                 'company_name' => '',
                 'hostname' => $_ENV['VIRTUAL_HOST'] ?? '',
                 'server_ip' => '', // Will be auto-detected, not hardcoded
-                'master_port' => (int) ($_ENV['MASTER_PORT'] ?? 999),
-                'user_port' => (int) ($_ENV['USER_PORT'] ?? 777),
+                'master_port' => (int) ($_ENV['MASTER_PORT'] ?? 9999),
+                'user_port' => (int) ($_ENV['USER_PORT'] ?? 7777),
                 'contact_email' => '',
                 'default_language' => 'en',
                 'timezone' => 'UTC',

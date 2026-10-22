@@ -437,7 +437,7 @@ ob_start();
                 headers: { 'Authorization': `Bearer ${TOKEN}` }
             });
             const data = await res.json();
-            sharedDomain = data.shared_domain || data.hostname || 'cyberit.cloud';
+            sharedDomain = data.shared_domain || data.hostname || window.location.hostname;
             if (sharedDomain) {
                 document.getElementById('baseDomainLabel').innerText = sharedDomain;
                 document.getElementById('sharedDomainSection').style.display = 'block';

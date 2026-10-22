@@ -292,7 +292,7 @@ $effectivePort = $hostPort ?: ($fwPort ?: $serverPort);
 
 try {
     // LogicPanel Dual-Port Routing
-    $masterPort = (int) ($_ENV['MASTER_PORT'] ?? 967);
+    $masterPort = (int) ($_ENV['MASTER_PORT'] ?? 9999);
     if ((int) $effectivePort === $masterPort || getenv('APP_MODE') === 'master') {
         // Master Panel Routes
         $routes = require __DIR__ . '/../src/routes_master.php';

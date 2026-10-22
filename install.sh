@@ -1276,9 +1276,9 @@ If SSL is not working immediately:
 
 📚 DOCUMENTATION & SUPPORT
 
-Documentation: https://docs.logicpanel.cloud
+Documentation: https://github.com/cyber-wahid/logicpanel#readme
 GitHub Issues:  https://github.com/cyber-wahid/logicpanel/issues
-Community:      https://community.logicpanel.cloud
+Repository:     https://github.com/cyber-wahid/logicpanel
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 

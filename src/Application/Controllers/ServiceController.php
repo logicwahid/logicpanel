@@ -134,7 +134,8 @@ class ServiceController
             }
 
             // Generate domain placeholders
-            $appDomain = $settings['shared_domain'] ?? $settings['hostname'] ?? $_ENV['APP_DOMAIN'] ?? 'cyberit.cloud';
+            $detectedHost = !empty($_SERVER['HTTP_HOST']) ? explode(':', $_SERVER['HTTP_HOST'])[0] : 'localhost';
+            $appDomain = $settings['shared_domain'] ?? $settings['hostname'] ?? $_ENV['APP_DOMAIN'] ?? $detectedHost;
             $customDomain = !empty($data['domain']) ? $data['domain'] : null;
             $domain = $customDomain; // Can be null initially
 
@@ -269,7 +270,7 @@ class ServiceController
 
             // If no custom domain, generate unique one based on ID
             if (empty($domain)) {
-                // Format: ServiceID-UserID.AppDomain (e.g., 1-43.cyberit.cloud)
+                // Format: ServiceID-UserID.AppDomain (e.g., 1-43.yourdomain.com)
                 $domain = "{$service->id}-{$userId}.{$appDomain}";
                 $service->domain = $domain;
                 $service->save();

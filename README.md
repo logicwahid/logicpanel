@@ -92,8 +92,8 @@ curl -sSL https://raw.githubusercontent.com/cyber-wahid/logicpanel/main/uninstal
 
 ## 💬 Support & Links
 
-*   **Documentation**: [docs.logicdock.cloud](https://docs.logicdock.cloud)
-*   **Website**: [logicdock.cloud](https://logicdock.cloud)
+*   **Documentation**: [Documentation & Guides](https://github.com/cyber-wahid/logicpanel#readme)
+*   **Repository**: [github.com/cyber-wahid/logicpanel](https://github.com/cyber-wahid/logicpanel)
 *   **Author**: [@cyber-wahid](https://github.com/cyber-wahid)
 
 <div align="center">

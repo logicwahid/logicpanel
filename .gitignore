@@ -67,3 +67,8 @@ DELETION_FIX.md
 UPDATE_SYSTEM.md
 SSL_SETUP_GUIDE.md
 Archive/
+
+# Modules & Billing Integrations
+components/
+logicpanel-blesta-module.zip
+*.zip

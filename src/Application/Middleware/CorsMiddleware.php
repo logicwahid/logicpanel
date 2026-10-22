@@ -49,7 +49,7 @@ class CorsMiddleware implements MiddlewareInterface
     private function getAllowedOrigins(string $host): array
     {
         // Load settings to get hostname
-        $settingsFile = '/var/www/html/config/settings.json';
+        $settingsFile = is_dir('/var/www/html/config') ? '/var/www/html/config/settings.json' : (dirname(__DIR__, 3) . '/config/settings.json');
         $hostname = $host; // Default to current host
 
         if (file_exists($settingsFile)) {
@@ -60,8 +60,8 @@ class CorsMiddleware implements MiddlewareInterface
         }
 
         // Allow the panel itself on different ports
-        $masterPort = $_ENV['MASTER_PORT'] ?? '999';
-        $userPort = $_ENV['USER_PORT'] ?? '777';
+        $masterPort = $_ENV['MASTER_PORT'] ?? '9999';
+        $userPort = $_ENV['USER_PORT'] ?? '7777';
 
         return [
             "https://{$hostname}",
