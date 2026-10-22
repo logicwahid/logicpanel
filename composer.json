@@ -2,7 +2,7 @@
     "name": "logicpanel/control-panel",
     "description": "Secure shared-hosting control panel for Node.js and Python applications",
     "type": "project",
-    "license": "GPL-3.0-or-later",
+    "license": "MIT",
     "require": {
         "php": "^8.3",
         "dragonmantank/cron-expression": "^3.6",
