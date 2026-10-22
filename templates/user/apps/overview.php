@@ -740,15 +740,15 @@ ob_start();
                         
                         const logLower = data.logs.toLowerCase();
                         if (logLower.includes('=== app failed ===') || logLower.includes('process failed') || logLower.includes('traceback (most recent call last)')) {
-                            statusText.innerHTML = '<span style="color: #f48771;">⚠ Error</span>';
+                            statusText.innerHTML = '<span style="color: #ef4444;">Error</span>';
                         } else if (logLower.includes('=== starting app ===') || logLower.includes('server running')) {
-                            statusText.innerHTML = '<span style="color: #89d185;">✓ Running</span>';
+                            statusText.innerHTML = '<span style="color: #22c55e;">Running</span>';
                             if (window.deploymentLogsInterval) {
                                 clearInterval(window.deploymentLogsInterval);
                                 window.deploymentLogsInterval = setInterval(() => fetchDeploymentLogs(serviceId), 10000); // Slow down once running
                             }
                         } else {
-                            statusText.innerHTML = '<span style="color: #569cd6;">⟳ Processing...</span>';
+                            statusText.innerHTML = '<span style="color: #3b82f6;">Processing...</span>';
                         }
                     }
                 }

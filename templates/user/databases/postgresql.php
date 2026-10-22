@@ -5,7 +5,7 @@ ob_start();
 
 <div class="db-container">
     <div class="db-page-header">
-        <h1>PostgreSQL® Databases</h1>
+        <h1>PostgreSQL Databases</h1>
         <p>The world's most advanced open source relational database.</p>
     </div>
 

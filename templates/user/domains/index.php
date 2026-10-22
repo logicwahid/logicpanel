@@ -72,7 +72,7 @@ ob_start();
                     placeholder="mysite.com, www.mysite.com"></textarea>
                 <small class="domain-hint">
                     Enter your custom domains separated by commas. Make sure DNS is pointed to this server.<br>
-                    <span class="domain-warning">⚠️ Changes will restart the application.</span>
+                    <span class="domain-warning">Note: Changes will restart the application.</span>
                 </small>
             </div>
         </div>

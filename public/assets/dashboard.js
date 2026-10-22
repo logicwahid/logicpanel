@@ -14,20 +14,19 @@ const modalStyles = `
 .lp-modal-overlay {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(4px);
+    background: rgba(15, 23, 42, 0.6);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 10001;
-    animation: lpFadeIn 0.2s ease;
+    animation: lpFadeIn 0.15s ease;
 }
 
 /* Modal Box */
 .lp-modal-content {
     background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-radius: 8px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
     width: 90%;
     max-width: 480px;
     padding: 0;
@@ -37,12 +36,12 @@ const modalStyles = `
 }
 
 .lp-modal-content.zoom-in {
-    animation: lpZoomIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: lpZoomIn 0.15s ease-out;
 }
 
 /* Header */
 .lp-modal-header {
-    padding: 20px 24px;
+    padding: 18px 24px;
     border-bottom: 1px solid #f3f4f6;
     display: flex;
     align-items: center;
@@ -51,14 +50,14 @@ const modalStyles = `
 
 .lp-modal-header h3 {
     margin: 0;
-    font-size: 18px;
+    font-size: 17px;
     color: #111827;
     font-weight: 600;
 }
 
 /* Body */
 .lp-modal-body {
-    padding: 24px;
+    padding: 20px 24px;
     color: #4B5563;
     font-size: 14px;
     line-height: 1.6;
@@ -66,61 +65,63 @@ const modalStyles = `
 
 /* Footer */
 .lp-modal-footer {
-    padding: 16px 24px;
+    padding: 14px 24px;
     background: #F9FAFB;
     display: flex;
     justify-content: flex-end;
-    gap: 12px;
+    gap: 10px;
     border-top: 1px solid #f3f4f6;
 }
 
 /* Buttons */
 .lp-btn {
-    padding: 10px 20px;
+    padding: 8px 18px;
     border-radius: 6px;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
     cursor: pointer;
     border: 1px solid transparent;
-    transition: all 0.2s;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
     display: inline-flex;
     align-items: center;
     justify-content: center;
 }
 
-.lp-btn-primary { background: #3C873A; color: white; }
-.lp-btn-primary:hover { background: #2D6A2E; transform: translateY(-1px); }
+.lp-btn-primary { background: #3C873A; color: white; border-color: #3C873A; }
+.lp-btn-primary:hover { background: #2D6A2E; border-color: #2D6A2E; }
 
 .lp-btn-secondary { background: white; color: #374151; border-color: #D1D5DB; }
 .lp-btn-secondary:hover { background: #F3F4F6; color: #111827; }
 
-.lp-btn-danger { background: #EF4444; color: white; }
-.lp-btn-danger:hover { background: #DC2626; transform: translateY(-1px); }
+.lp-btn-danger { background: #EF4444; color: white; border-color: #EF4444; }
+.lp-btn-danger:hover { background: #DC2626; border-color: #DC2626; }
 
 /* Toast Notification */
 .lp-toast {
     position: fixed;
     top: 24px;
     right: 24px;
-    background: white;
-    color: #374151;
-    padding: 12px 20px;
-    border-radius: 8px;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    color: #1f2937;
+    padding: 12px 18px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     transform: translateX(120%);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    opacity: 0;
     z-index: 10002;
     font-size: 14px;
 }
 
-.lp-toast.show { transform: translateX(0); }
-.lp-toast-success { border-left: 4px solid #3C873A; }
-.lp-toast-error { border-left: 4px solid #EF4444; }
-.lp-toast-info { border-left: 4px solid #2196F3; }
-.lp-toast-warning { border-left: 4px solid #FF9800; }
+.lp-toast.show { transform: translateX(0); opacity: 1; }
+.lp-toast-success svg, .lp-toast-success i { color: #15803d; }
+.lp-toast-error svg, .lp-toast-error i { color: #dc2626; }
+.lp-toast-info svg, .lp-toast-info i { color: #2563eb; }
+.lp-toast-warning svg, .lp-toast-warning i { color: #d97706; }
 
 /* Dark Mode Support */
 html[data-theme="dark"] .lp-modal-content,
@@ -167,12 +168,13 @@ html[data-theme="dark"] .lp-toast,
 [data-theme="dark"] .lp-toast {
     background: #2d333b !important;
     color: #e6edf3 !important;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+    border-color: #444c56 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 /* Animations */
 @keyframes lpFadeIn { from { opacity: 0; } to { opacity: 1; } }
-@keyframes lpZoomIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@keyframes lpZoomIn { from { transform: scale(0.96); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 </style>
 `;
 document.head.insertAdjacentHTML('beforeend', modalStyles);

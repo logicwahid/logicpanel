@@ -2,7 +2,7 @@
 
 This directory contains all the UI templates for LogicPanel.
 
-## 📁 Directory Structure
+## Directory Structure
 
 ```
 templates/
@@ -24,7 +24,7 @@ templates/
 
 ---
 
-## 📝 File Manager (`apps/files.php`)
+## File Manager (`apps/files.php`)
 
 ### Overview
 A cPanel-inspired file manager for managing application files.
@@ -47,17 +47,17 @@ A cPanel-inspired file manager for managing application files.
 
 | Action | Files | Folders | Empty Space |
 |--------|-------|---------|-------------|
-| Open | ✅ (Editor) | ✅ (Enter) | ❌ |
-| Edit | ✅ | ❌ | ❌ |
-| Rename | ✅ | ✅ | ❌ |
-| Copy | ✅ | ✅ | ❌ |
-| Move | ✅ | ✅ | ❌ |
-| Paste | ✅ | ✅ | ✅ |
-| Download | ✅ | ❌ | ❌ |
-| Delete | ✅ | ✅ | ❌ |
-| New File | ❌ | ❌ | ✅ |
-| New Folder | ❌ | ❌ | ✅ |
-| Refresh | ❌ | ❌ | ✅ |
+| Open | Yes (Editor) | Yes (Enter) | - |
+| Edit | Yes | - | - |
+| Rename | Yes | Yes | - |
+| Move | Yes | Yes | - |
+| Copy | Yes | Yes | - |
+| Paste | Yes | Yes | Yes |
+| Download | Yes | - | - |
+| Delete | Yes | Yes | - |
+| New File | - | - | Yes |
+| New Folder | - | - | Yes |
+| Refresh | - | - | Yes |
 
 ### Technical Details
 - Uses JavaScript for all file operations (no page reload)
@@ -67,7 +67,7 @@ A cPanel-inspired file manager for managing application files.
 
 ---
 
-## 📝 Code Editor (`apps/editor.php`)
+## Code Editor (`apps/editor.php`)
 
 ### Overview
 A full-featured code editor powered by CodeMirror with syntax highlighting.
@@ -116,7 +116,7 @@ A full-featured code editor powered by CodeMirror with syntax highlighting.
 
 ---
 
-## 🎨 Dashboard (`dashboard/index.php`)
+## Dashboard (`dashboard/index.php`)
 
 ### Overview
 Main control panel showing statistics and quick-access tools.
@@ -137,7 +137,7 @@ Each tool card is a clickable link or action trigger:
 
 ---
 
-## 🔧 Layouts (`layouts/main.php`)
+## Layouts (`layouts/main.php`)
 
 ### Overview
 Base template that wraps all authenticated pages.
@@ -162,7 +162,7 @@ Base template that wraps all authenticated pages.
 
 ---
 
-## 🔐 Authentication
+## Authentication
 
 All templates except `login.php` require authentication.
 
@@ -185,7 +185,7 @@ function getAuthToken() {
 
 ---
 
-## 📝 Notes for Developers
+## Notes for Developers
 
 1. **API Base URL**: Use `window.base_url` or PHP `$base_url` variable
 2. **Icons**: FontAwesome 6.4 for file manager, Lucide for dashboard

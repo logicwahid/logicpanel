@@ -93,7 +93,7 @@ $serviceId = $_GET['id'] ?? null;
 
         /* TOOLBAR */
         .fm-toolbar {
-            background: linear-gradient(to bottom, #fff, #f0f0f0);
+            background: #f9fafb;
             border-bottom: 1px solid var(--toolbar-border);
             padding: 8px 10px;
             display: flex;
@@ -106,18 +106,19 @@ $serviceId = $_GET['id'] ?? null;
             border: 1px solid transparent;
             background: transparent;
             padding: 5px 10px;
-            border-radius: 3px;
+            border-radius: 4px;
             cursor: pointer;
             display: flex;
             align-items: center;
             gap: 6px;
             font-size: 12px;
             color: #444;
+            transition: background-color 0.15s ease, border-color 0.15s ease;
         }
 
         .fm-btn:hover {
-            border-color: #bbb;
-            background: linear-gradient(to bottom, #fff, #e6e6e6);
+            border-color: #d1d5db;
+            background: #f3f4f6;
         }
 
         .fm-btn:active {
@@ -458,20 +459,20 @@ $serviceId = $_GET['id'] ?? null;
         }
 
         .toast.success {
-            background: linear-gradient(135deg, #28a745, #20c997);
+            background: #15803d;
         }
 
         .toast.error {
-            background: linear-gradient(135deg, #dc3545, #e74c3c);
+            background: #b91c1c;
         }
 
         .toast.info {
-            background: linear-gradient(135deg, #007bff, #17a2b8);
+            background: #1d4ed8;
         }
 
         .toast.warning {
-            background: linear-gradient(135deg, #ffc107, #fd7e14);
-            color: #333;
+            background: #b45309;
+            color: #fff;
         }
 
         .toast i {

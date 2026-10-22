@@ -5,7 +5,7 @@ ob_start();
 
 <div class="db-container">
     <div class="db-page-header">
-        <h1>MySQL® Databases</h1>
+        <h1>MySQL Databases</h1>
         <p>Manage large amounts of information over the web easily.</p>
     </div>
 

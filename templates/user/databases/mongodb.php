@@ -5,7 +5,7 @@ ob_start();
 
 <div class="db-container">
     <div class="db-page-header">
-        <h1>MongoDB® Databases</h1>
+        <h1>MongoDB Databases</h1>
         <p>A source-available cross-platform document-oriented database program.</p>
     </div>
 

@@ -216,7 +216,7 @@
     .lp-user-avatar {
         width: 34px;
         height: 34px;
-        background: linear-gradient(135deg, #3C873A 0%, #2D6A2E 100%);
+        background: #16a34a;
         border-radius: 50%;
         display: flex;
         align-items: center;

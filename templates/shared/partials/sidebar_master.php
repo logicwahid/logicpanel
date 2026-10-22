@@ -117,10 +117,10 @@
 
     // Avatar color based on role
     $avatarColors = [
-        'root' => 'linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%)',
-        'admin' => 'linear-gradient(135deg, #1976d2 0%, #0d47a1 100%)',
-        'reseller' => 'linear-gradient(135deg, #7b1fa2 0%, #4a148c 100%)',
-        'user' => 'linear-gradient(135deg, #388e3c 0%, #1b5e20 100%)'
+        'root' => '#dc2626',
+        'admin' => '#2563eb',
+        'reseller' => '#7c3aed',
+        'user' => '#16a34a'
     ];
     $avatarBg = $avatarColors[$userRole] ?? $avatarColors['user'];
     ?>

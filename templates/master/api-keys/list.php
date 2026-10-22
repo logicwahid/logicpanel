@@ -213,13 +213,12 @@ ob_start();
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.6);
+        background: rgba(15, 23, 42, 0.6);
         z-index: 9999;
         justify-content: center;
         align-items: center;
-        backdrop-filter: blur(4px);
         opacity: 0;
-        transition: opacity 0.2s ease;
+        transition: opacity 0.15s ease;
     }
 
     .lp-modal-overlay.active {

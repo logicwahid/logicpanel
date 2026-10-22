@@ -16,48 +16,59 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            background-color: #0f172a;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #fff;
+            color: #f8fafc;
         }
 
         .error-container {
             text-align: center;
             padding: 40px;
-            max-width: 600px;
+            max-width: 560px;
+        }
+
+        .error-icon {
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .error-icon svg {
+            width: 44px;
+            height: 44px;
+            color: #ef4444;
         }
 
         .error-code {
-            font-size: 120px;
+            font-size: 72px;
             font-weight: 700;
-            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 20px;
+            color: #ef4444;
+            margin-bottom: 12px;
             line-height: 1;
+            letter-spacing: -1px;
         }
 
         .error-title {
-            font-size: 28px;
+            font-size: 22px;
             font-weight: 600;
-            margin-bottom: 15px;
-            color: #fff;
+            margin-bottom: 12px;
+            color: #f1f5f9;
         }
 
         .error-message {
-            font-size: 16px;
-            color: #a0aec0;
-            margin-bottom: 30px;
-            line-height: 1.6;
+            font-size: 15px;
+            color: #94a3b8;
+            margin-bottom: 28px;
+            line-height: 1.5;
         }
 
         .error-actions {
             display: flex;
-            gap: 15px;
+            gap: 12px;
             justify-content: center;
             flex-wrap: wrap;
         }
@@ -66,75 +77,44 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 12px 24px;
-            border-radius: 8px;
+            padding: 10px 20px;
+            border-radius: 6px;
             font-size: 14px;
             font-weight: 500;
             text-decoration: none;
-            transition: all 0.2s ease;
-            border: none;
+            transition: background-color 0.15s ease, border-color 0.15s ease;
             cursor: pointer;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+            background-color: #3C873A;
             color: #fff;
+            border: 1px solid #3C873A;
         }
 
         .btn-primary:hover {
-            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+            background-color: #2D6A2E;
+            border-color: #2D6A2E;
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: #1e293b;
+            color: #e2e8f0;
+            border: 1px solid #334155;
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .error-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 30px;
-            background: rgba(233, 69, 96, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .error-icon svg {
-            width: 40px;
-            height: 40px;
-            color: #e94560;
+            background: #334155;
         }
 
         .retry-info {
-            margin-top: 30px;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
+            margin-top: 28px;
+            padding: 12px 16px;
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 6px;
             font-size: 13px;
-            color: #718096;
-        }
-
-        @keyframes pulse {
-
-            0%,
-            100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0.5;
-            }
-        }
-
-        .loading {
-            animation: pulse 2s infinite;
+            color: #94a3b8;
         }
     </style>
 </head>
@@ -194,7 +174,7 @@
         </div>
 
         <div class="retry-info">
-            <span class="loading">●</span> Auto-retry in <span id="countdown">10</span> seconds...
+            Auto-retry in <span id="countdown">10</span> seconds...
         </div>
     </div>
 

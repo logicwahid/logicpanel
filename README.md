@@ -1,5 +1,5 @@
 <h1>LogicPanel</h1>
-  <p><b>The Next-Generation Hosting Control Panel for Modern Web Apps.</b></p>
+  <p><b>Lightweight PaaS and Hosting Control Panel for Modern Web Apps.</b></p>
   <p>
     <a href="https://github.com/cyber-wahid/logicpanel/releases"><img src="https://img.shields.io/github/v/release/cyber-wahid/logicpanel" alt="Latest Release" /></a>
     <img src="https://img.shields.io/badge/PHP-8.3+-blue.svg" alt="PHP 8.3+" />
@@ -10,7 +10,7 @@
 
 ---
 
-**LogicPanel** is an ultra-fast, modern, and highly secure web hosting control panel designed for developers and agencies. Built with pure Docker isolation, it natively supports **Node.js**, **Python**, and **N8n**, alongside classic databases and robust SSL management out of the box. Say goodbye to heavy legacy panels.
+**LogicPanel** is a fast, lightweight web hosting control panel designed for developers and agencies. Built with pure Docker isolation, it natively supports **Node.js**, **Python**, and **N8n**, alongside databases and automated SSL management out of the box.
 
 <img width="1366" height="644" alt="image" src="https://github.com/user-attachments/assets/cd3a464b-70bb-4bde-9779-d18ac33dec4f" />
 
@@ -18,33 +18,33 @@
 
 
 
-## 🌟 Key Features
+## Key Features
 
-### 🚀 Zero-Config App Deployments
+### Application Deployments
 Deploy applications instantly right from the dashboard.
 *   **Node.js**: Multiple runtime versions supported (`18`, `20`, `22`, etc.)
 *   **Python**: Run your Flask, Django, or FastAPI apps easily.
 *   **N8n**: Setup fully-functional N8n workflow automation instances with one click.
 *   **Databases**: Instant provisioning for PostgreSQL, MySQL, Redis, and MongoDB.
 
-### 🔒 Built-in Security & Isolation
+### Security and Isolation
 *   **100% Docker Isolation**: Every app runs in its own tightly sandboxed container, ensuring that resource limits and data privacy are strictly enforced.
 *   **Traefik Proxy Engine**: Fully automated reverse proxy routing with zero downtime reloads.
 *   **Automated SSL/TLS**: Free Let's Encrypt certificates are provisioned automatically for every domain and addon domain. Includes a manual SSL Manager for customized certs.
-*   **HTTP/3 Support**: blazing fast, modern networking enabled by default.
+*   **HTTP/3 Support**: Modern networking enabled by default.
 
-### 💻 Developer Tools Included
+### Developer Tools
 *   **Web-based Terminal**: Get instant, secure shell access to your app's container without leaving your browser.
 *   **Advanced File Manager**: Edit, upload, and manage application files directly.
 *   **Detailed Metrics**: Live CPU, RAM, and Disk monitoring on the dashboard.
 
-### 👥 Reseller & Multi-Tenant Support
+### Reseller and Multi-Tenant Support
 *   **Master Panel (Port `9999`)**: Manage global settings, API keys, users, and all containers across the server.
 *   **User Panel (Port `7777`)**: Clean, minimalist interface for your clients to deploy and manage their own apps.
 
 ---
 
-## ⚡ Quick Installation
+## Installation
 
 Getting LogicPanel up and running takes less than 2 minutes on a fresh server.
 
@@ -64,7 +64,7 @@ Once installed, access your panels:
 
 ---
 
-## 🏗️ Technical Stack
+## Technical Stack
 
 *   **Backend Interface**: PHP 8.3 (Slim Framework 4, Eloquent ORM)
 *   **Frontend**: Vanilla JS, optimized custom CSS (Classic UI)
@@ -74,7 +74,7 @@ Once installed, access your panels:
 
 ---
 
-## 🧹 Maintenance
+## Maintenance
 
 ### Clean Up System Debris
 LogicPanel leverages Docker, which can leave unused images over time. Keep your server lean:
@@ -90,7 +90,7 @@ curl -sSL https://raw.githubusercontent.com/cyber-wahid/logicpanel/main/uninstal
 
 ---
 
-## 💬 Support & Links
+## Support & Links
 
 *   **Documentation**: [Documentation & Guides](https://github.com/cyber-wahid/logicpanel#readme)
 *   **Repository**: [github.com/cyber-wahid/logicpanel](https://github.com/cyber-wahid/logicpanel)

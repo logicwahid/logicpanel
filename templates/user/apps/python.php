@@ -747,16 +747,16 @@ function showDeploymentLogs(serviceId, serviceName) {
                         
                         const logLower = data.logs.toLowerCase();
                         if (logLower.includes('=== app failed ===') || logLower.includes('process failed') || logLower.includes('traceback (most recent call last)')) {
-                            statusText.innerHTML = '<span style="color: #f48771;">⚠ Deployment Error</span>';
+                            statusText.innerHTML = '<span style="color: #ef4444;">Deployment Error</span>';
                         } else if (logLower.includes('=== starting app ===') || logLower.includes('server running')) {
-                            statusText.innerHTML = '<span style="color: #89d185;">✓ Deployment Complete</span>';
+                            statusText.innerHTML = '<span style="color: #22c55e;">Deployment Complete</span>';
                             // Slow down refresh
                             if (window.deploymentLogsInterval) {
                                 clearInterval(window.deploymentLogsInterval);
                                 window.deploymentLogsInterval = setInterval(() => fetchDeploymentLogs(serviceId), 10000);
                             }
                         } else {
-                            statusText.innerHTML = '<span style="color: #569cd6;">⟳ Deploying...</span>';
+                            statusText.innerHTML = '<span style="color: #3b82f6;">Deploying...</span>';
                         }
                     }
                 }

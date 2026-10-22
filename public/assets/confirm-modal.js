@@ -35,13 +35,12 @@ function initConfirmModal() {
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(15, 23, 42, 0.6);
             z-index: 10000;
             justify-content: center;
             align-items: center;
-            backdrop-filter: blur(4px);
             opacity: 0;
-            transition: opacity 0.2s ease;
+            transition: opacity 0.15s ease;
         }
         
         .lp-confirm-overlay.active {
@@ -51,13 +50,13 @@ function initConfirmModal() {
         
         .lp-confirm-box {
             background: var(--bg-card);
-            border-radius: 12px;
+            border-radius: 8px;
             width: 90%;
             max-width: 420px;
             padding: 24px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            transform: translateY(10px);
-            transition: transform 0.2s ease;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            transform: translateY(6px);
+            transition: transform 0.15s ease;
             border: 1px solid var(--border-color);
             text-align: center;
         }
@@ -67,20 +66,16 @@ function initConfirmModal() {
         }
         
         .lp-confirm-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(244, 67, 54, 0.1);
-            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 16px;
+            margin: 0 auto 14px;
             color: var(--danger);
         }
         
         .lp-confirm-icon svg {
-            width: 28px;
-            height: 28px;
+            width: 32px;
+            height: 32px;
         }
         
         .lp-confirm-title {
@@ -110,7 +105,7 @@ function initConfirmModal() {
         [data-theme="dark"] .lp-confirm-box {
             background: var(--bg-card);
             border-color: var(--border-color);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
         }
     `;
     document.head.appendChild(style);

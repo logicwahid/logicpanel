@@ -602,31 +602,27 @@ const server = http.createServer((req, res) => {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App Deployed - LogicPanel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Inter',sans-serif;min-height:100vh;background:#1E2127;display:flex;align-items:center;justify-content:center;padding:20px;position:relative;overflow:hidden}
-        body::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(60,135,58,0.08) 0%,transparent 70%);top:-200px;right:-200px}
-        body::after{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(60,135,58,0.05) 0%,transparent 70%);bottom:-100px;left:-100px}
-        .card{max-width:400px;width:100%;background:#282C34;border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:28px 28px;text-align:center;position:relative;z-index:1;box-shadow:0 20px 60px rgba(0,0,0,0.4)}
-        .card::before{content:'';position:absolute;top:-1px;left:20%;right:20%;height:2px;background:linear-gradient(90deg,transparent,#3C873A,transparent);border-radius:2px}
-        h1{color:#E5E7EB;font-size:18px;font-weight:600;margin-bottom:6px}
-        .sub{color:#9CA3AF;font-size:12px;line-height:1.5;margin-bottom:18px}
-        .domain{background:#1E2127;border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:10px 14px;margin-bottom:18px}
-        .domain-label{color:#6B7280;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px}
-        .domain-url{color:#4ADE80;font-family:'SF Mono',Monaco,'Courier New',monospace;font-size:13px;word-break:break-all}
+        body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;min-height:100vh;background:#0f172a;display:flex;align-items:center;justify-content:center;padding:20px}
+        .card{max-width:440px;width:100%;background:#1e293b;border:1px solid #334155;border-radius:8px;padding:28px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.15)}
+        h1{color:#f8fafc;font-size:18px;font-weight:600;margin-bottom:6px}
+        .sub{color:#94a3b8;font-size:13px;line-height:1.5;margin-bottom:18px}
+        .domain{background:#0f172a;border:1px solid #334155;border-radius:6px;padding:10px 14px;margin-bottom:18px}
+        .domain-label{color:#64748b;font-size:10px;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+        .domain-url{color:#38bdf8;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:13px;word-break:break-all}
         .domain-url a{color:inherit;text-decoration:none}
         .domain-url a:hover{text-decoration:underline}
         .steps{text-align:left;margin-bottom:18px}
-        .steps-title{color:#9CA3AF;font-size:10px;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
-        .step{display:flex;align-items:flex-start;gap:8px;padding:5px 0;color:#9CA3AF;font-size:11px;line-height:1.4}
-        .step-num{width:18px;height:18px;background:rgba(60,135,58,0.15);border:1px solid rgba(60,135,58,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;color:#4ADE80;flex-shrink:0;margin-top:1px}
+        .steps-title{color:#94a3b8;font-size:11px;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;font-weight:600}
+        .step{display:flex;align-items:flex-start;gap:8px;padding:5px 0;color:#94a3b8;font-size:12px;line-height:1.4}
+        .step-num{width:20px;height:20px;background:#334155;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:#f1f5f9;flex-shrink:0;margin-top:1px}
         .runtime{display:flex;gap:10px;justify-content:center;margin-bottom:18px}
-        .runtime-item{background:#1E2127;border:1px solid rgba(255,255,255,0.06);border-radius:6px;padding:8px 12px;flex:1}
-        .runtime-label{color:#6B7280;font-size:8px;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px}
-        .runtime-val{color:#E5E7EB;font-size:11px;font-weight:500}
-        .brand{padding-top:14px;border-top:1px solid rgba(255,255,255,0.04);color:#6B7280;font-size:10px}
-        .brand a{color:#9CA3AF;text-decoration:none}
+        .runtime-item{background:#0f172a;border:1px solid #334155;border-radius:6px;padding:8px 12px;flex:1}
+        .runtime-label{color:#64748b;font-size:9px;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px}
+        .runtime-val{color:#f1f5f9;font-size:12px;font-weight:500}
+        .brand{padding-top:14px;border-top:1px solid #334155;color:#64748b;font-size:11px}
+        .brand a{color:#94a3b8;text-decoration:none}
     </style>
 </head>
 <body>
@@ -682,31 +678,27 @@ html_content = f"""<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App Deployed - LogicPanel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         *{{margin:0;padding:0;box-sizing:border-box}}
-        body{{font-family:'Inter',sans-serif;min-height:100vh;background:#1E2127;display:flex;align-items:center;justify-content:center;padding:20px;position:relative;overflow:hidden}}
-        body::before{{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(60,135,58,0.08) 0%,transparent 70%);top:-200px;right:-200px}}
-        body::after{{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(60,135,58,0.05) 0%,transparent 70%);bottom:-100px;left:-100px}}
-        .card{{max-width:400px;width:100%;background:#282C34;border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:28px 28px;text-align:center;position:relative;z-index:1;box-shadow:0 20px 60px rgba(0,0,0,0.4)}}
-        .card::before{{content:'';position:absolute;top:-1px;left:20%;right:20%;height:2px;background:linear-gradient(90deg,transparent,#3C873A,transparent);border-radius:2px}}
-        h1{{color:#E5E7EB;font-size:18px;font-weight:600;margin-bottom:6px}}
-        .sub{{color:#9CA3AF;font-size:12px;line-height:1.5;margin-bottom:18px}}
-        .domain{{background:#1E2127;border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:10px 14px;margin-bottom:18px}}
-        .domain-label{{color:#6B7280;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px}}
-        .domain-url{{color:#4ADE80;font-family:'SF Mono',Monaco,'Courier New',monospace;font-size:13px;word-break:break-all}}
+        body{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;min-height:100vh;background:#0f172a;display:flex;align-items:center;justify-content:center;padding:20px}}
+        .card{{max-width:440px;width:100%;background:#1e293b;border:1px solid #334155;border-radius:8px;padding:28px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.15)}}
+        h1{{color:#f8fafc;font-size:18px;font-weight:600;margin-bottom:6px}}
+        .sub{{color:#94a3b8;font-size:13px;line-height:1.5;margin-bottom:18px}}
+        .domain{{background:#0f172a;border:1px solid #334155;border-radius:6px;padding:10px 14px;margin-bottom:18px}}
+        .domain-label{{color:#64748b;font-size:10px;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}}
+        .domain-url{{color:#38bdf8;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:13px;word-break:break-all}}
         .domain-url a{{color:inherit;text-decoration:none}}
         .domain-url a:hover{{text-decoration:underline}}
         .steps{{text-align:left;margin-bottom:18px}}
-        .steps-title{{color:#9CA3AF;font-size:10px;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}}
-        .step{{display:flex;align-items:flex-start;gap:8px;padding:5px 0;color:#9CA3AF;font-size:11px;line-height:1.4}}
-        .step-num{{width:18px;height:18px;background:rgba(60,135,58,0.15);border:1px solid rgba(60,135,58,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;color:#4ADE80;flex-shrink:0;margin-top:1px}}
+        .steps-title{{color:#94a3b8;font-size:11px;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;font-weight:600}}
+        .step{{display:flex;align-items:flex-start;gap:8px;padding:5px 0;color:#94a3b8;font-size:12px;line-height:1.4}}
+        .step-num{{width:20px;height:20px;background:#334155;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:#f1f5f9;flex-shrink:0;margin-top:1px}}
         .runtime{{display:flex;gap:10px;justify-content:center;margin-bottom:18px}}
-        .runtime-item{{background:#1E2127;border:1px solid rgba(255,255,255,0.06);border-radius:6px;padding:8px 12px;flex:1}}
-        .runtime-label{{color:#6B7280;font-size:8px;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px}}
-        .runtime-val{{color:#E5E7EB;font-size:11px;font-weight:500}}
-        .brand{{padding-top:14px;border-top:1px solid rgba(255,255,255,0.04);color:#6B7280;font-size:10px}}
-        .brand a{{color:#9CA3AF;text-decoration:none}}
+        .runtime-item{{background:#0f172a;border:1px solid #334155;border-radius:6px;padding:8px 12px;flex:1}}
+        .runtime-label{{color:#64748b;font-size:9px;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px}}
+        .runtime-val{{color:#f1f5f9;font-size:12px;font-weight:500}}
+        .brand{{padding-top:14px;border-top:1px solid #334155;color:#64748b;font-size:11px}}
+        .brand a{{color:#94a3b8;text-decoration:none}}
     </style>
 </head>
 <body>
