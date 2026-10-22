@@ -1,101 +1,102 @@
-<h1>LogicPanel</h1>
-  <p><b>Lightweight PaaS and Hosting Control Panel for Modern Web Apps.</b></p>
+<div align="center">
+  <h1>LogicPanel</h1>
+  <p><b>Lightweight, Fast & Docker-Isolated Web Hosting Control Panel.</b></p>
   <p>
-    <a href="https://github.com/cyber-wahid/logicpanel/releases"><img src="https://img.shields.io/github/v/release/cyber-wahid/logicpanel" alt="Latest Release" /></a>
-    <img src="https://img.shields.io/badge/PHP-8.3+-blue.svg" alt="PHP 8.3+" />
-    <img src="https://img.shields.io/badge/Docker-Powered-2496ED.svg" alt="Docker Powered" />
-    <img src="https://img.shields.io/badge/HTTP%2F3-Supported-success.svg" alt="HTTP/3 Supported" />
+    <a href="https://github.com/logicwahid/logicpanel/releases"><img src="https://img.shields.io/github/v/release/logicwahid/logicpanel?color=blue" alt="Latest Release" /></a>
+    <img src="https://img.shields.io/badge/Version-3.2.0-blue.svg" alt="Version 3.2.0" />
+    <img src="https://img.shields.io/badge/Docker-Isolated-2496ED.svg" alt="Docker Powered" />
+    <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License MIT" />
   </p>
 </div>
 
 ---
 
-**LogicPanel** is a fast, lightweight web hosting control panel designed for developers and agencies. Built with pure Docker isolation, it natively supports **Node.js**, **Python**, and **N8n**, alongside databases and automated SSL management out of the box.
+**LogicPanel** is a modern, lightweight web hosting control panel built for developers, agencies, and hosting providers. It allows anyone — even with zero Linux experience — to host **Node.js**, **Python**, **N8n**, static websites, and databases with automated SSL and 100% Docker isolation.
 
-<img width="1366" height="644" alt="image" src="https://github.com/user-attachments/assets/cd3a464b-70bb-4bde-9779-d18ac33dec4f" />
-
-<img width="1366" height="644" alt="image" src="https://github.com/user-attachments/assets/eeec83ee-4fc9-42f7-8338-fe8d02a3bcf7" />
-
-
-
-## Key Features
-
-### Application Deployments
-Deploy applications instantly right from the dashboard.
-*   **Node.js**: Multiple runtime versions supported (`18`, `20`, `22`, etc.)
-*   **Python**: Run your Flask, Django, or FastAPI apps easily.
-*   **N8n**: Setup fully-functional N8n workflow automation instances with one click.
-*   **Databases**: Instant provisioning for PostgreSQL, MySQL, Redis, and MongoDB.
-
-### Security and Isolation
-*   **100% Docker Isolation**: Every app runs in its own tightly sandboxed container, ensuring that resource limits and data privacy are strictly enforced.
-*   **Traefik Proxy Engine**: Fully automated reverse proxy routing with zero downtime reloads.
-*   **Automated SSL/TLS**: Free Let's Encrypt certificates are provisioned automatically for every domain and addon domain. Includes a manual SSL Manager for customized certs.
-*   **HTTP/3 Support**: Modern networking enabled by default.
-
-### Developer Tools
-*   **Web-based Terminal**: Get instant, secure shell access to your app's container without leaving your browser.
-*   **Advanced File Manager**: Edit, upload, and manage application files directly.
-*   **Detailed Metrics**: Live CPU, RAM, and Disk monitoring on the dashboard.
-
-### Reseller and Multi-Tenant Support
-*   **Master Panel (Port `9999`)**: Manage global settings, API keys, users, and all containers across the server.
-*   **User Panel (Port `7777`)**: Clean, minimalist interface for your clients to deploy and manage their own apps.
+<img width="1366" height="644" alt="LogicPanel Dashboard" src="https://github.com/user-attachments/assets/cd3a464b-70bb-4bde-9779-d18ac33dec4f" />
 
 ---
 
-## Installation
+## ⚡ 1-Minute Automated Installation
 
-Getting LogicPanel up and running takes less than 2 minutes on a fresh server.
+You don't need to configure web servers, databases, or firewalls manually. Everything is set up automatically with one single command.
 
-**Requirements:**
-*   A clean Linux VPS (Ubuntu 20.04+, Debian 11+)
-*   Root privileges
-*   Open standard ports: `80`, `443`, `7777`, `9999`
+### Requirements:
+* A fresh Linux VPS (**Ubuntu 22.04 / 24.04** or **Debian 11 / 12** recommended).
+* Minimum **1 GB RAM** (2 GB recommended).
+* Root or sudo access.
 
-Run the following command as `root`:
+### Run Installer:
+Connect to your VPS via SSH and run:
+
 ```bash
-curl -sSL https://raw.githubusercontent.com/cyber-wahid/logicpanel/main/install.sh | sudo bash
+curl -sSL https://raw.githubusercontent.com/logicwahid/logicpanel/main/install.sh | sudo bash
 ```
 
-Once installed, access your panels:
-*   **Master Admin Panel**: `https://<YOUR_IP_OR_DOMAIN>:9999`
-*   **User Dashboard**: `https://<YOUR_IP_OR_DOMAIN>:7777`
+> **What happens next?**
+> The installer automatically detects your OS, installs Docker, configures the Traefik SSL reverse proxy, secures your ports, generates random secure credentials, and displays your login information directly on your screen.
 
 ---
 
-## Technical Stack
+## 🔑 Accessing Your Panels
 
-*   **Backend Interface**: PHP 8.3 (Slim Framework 4, Eloquent ORM)
-*   **Frontend**: Vanilla JS, optimized custom CSS (Classic UI)
-*   **Core Engine**: Docker Engine, Docker Compose
-*   **Proxy & Routing**: Traefik v3
-*   **Data Storage**: SQLite (Internal state) & MariaDB
+Once installation finishes, your panel is immediately live:
+
+| Panel | URL | Purpose |
+| :--- | :--- | :--- |
+| **Master Admin Panel** | `https://YOUR_SERVER_IP:9999` | Server management, API keys, user accounts, and updates. |
+| **User Client Dashboard** | `https://YOUR_SERVER_IP:7777` | App deployments, databases, file manager, and SSL. |
+
+*(Replace `YOUR_SERVER_IP` with your actual server IP address)*
 
 ---
 
-## Maintenance
+## ✨ What You Can Do
 
-### Clean Up System Debris
-LogicPanel leverages Docker, which can leave unused images over time. Keep your server lean:
+* **🚀 1-Click App Deployments**: Host Node.js (18/20/22+), Python (Flask/Django/FastAPI), N8n workflows, or static sites in seconds.
+* **🗄️ Instant Databases**: Spin up MySQL, PostgreSQL, Redis, and MongoDB with one click.
+* **🔒 Automatic Free SSL**: Let's Encrypt SSL certificates are requested and renewed automatically for all your domains.
+* **💻 In-Browser Web Terminal & File Manager**: Edit code, upload zip files, and access your app's shell directly from your browser.
+* **🛡️ 100% Docker Container Isolation**: Every app runs in its own sandbox — if one site breaks, no other site on your server is affected.
+* **💼 Billing Integration Ready**: Fully automated provisioning module for **Blesta** and **WHMCS** included.
+
+---
+
+## 🛠️ Quick Management Commands
+
+All simple maintenance tasks can be done with one line:
+
+### Update LogicPanel to Latest Version
 ```bash
-docker system prune -a --volumes
+cd /opt/logicpanel && sudo ./update.sh
 ```
 
-### Complete Uninstallation
-*Warning: This will permanently destroy all hosted apps, databases, and LogicPanel configurations.*
+### Restart Panel Services
 ```bash
-curl -sSL https://raw.githubusercontent.com/cyber-wahid/logicpanel/main/uninstall.sh | sudo bash
+cd /opt/logicpanel && sudo docker compose restart
+```
+
+### View Live System Logs
+```bash
+cd /opt/logicpanel && sudo docker compose logs -f
+```
+
+### Complete Uninstallation (Clean VPS)
+```bash
+curl -sSL https://raw.githubusercontent.com/logicwahid/logicpanel/main/uninstall.sh | sudo bash
 ```
 
 ---
 
-## Support & Links
+## 🤝 Community & Support
 
-*   **Documentation**: [Documentation & Guides](https://github.com/cyber-wahid/logicpanel#readme)
-*   **Repository**: [github.com/cyber-wahid/logicpanel](https://github.com/cyber-wahid/logicpanel)
-*   **Author**: [@cyber-wahid](https://github.com/cyber-wahid)
+* **Documentation**: [docs & setup guides](https://github.com/logicwahid/logicpanel#readme)
+* **GitHub Repository**: [github.com/logicwahid/logicpanel](https://github.com/logicwahid/logicpanel)
+* **Report an Issue**: [github.com/logicwahid/logicpanel/issues](https://github.com/logicwahid/logicpanel/issues)
+* **Author**: [@logicwahid](https://github.com/logicwahid)
 
-<div align="center">
-  <i>Simplicity is the ultimate sophistication.</i>
-</div>
+---
+
+## 📄 License
+
+LogicPanel is open-source software licensed under the **[MIT License](LICENSE)**.

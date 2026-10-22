@@ -18,7 +18,7 @@ generate_random() { cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w "$1" | head 
 # so that 'screen' can re-run it reliably.
 if [[ ! -f "$0" ]] || [[ "$0" == "bash" ]] || [[ "$0" == "/dev/stdin" ]]; then
     log_info "Remote execution detected. Downloading installer to /tmp/lp_install.sh..."
-    curl -sSL https://raw.githubusercontent.com/cyber-wahid/logicpanel/main/install.sh -o /tmp/lp_install.sh
+    curl -sSL https://raw.githubusercontent.com/logicwahid/logicpanel/main/install.sh -o /tmp/lp_install.sh
     chmod +x /tmp/lp_install.sh
     exec /tmp/lp_install.sh "$@"
     exit 0
@@ -75,7 +75,7 @@ if [ "$IS_DOCKER_DESKTOP" = true ]; then
 else
     INSTALL_DIR="/opt/logicpanel"
 fi
-VERSION="3.1.7"
+VERSION="3.2.0"
 
 # --- 4. Duplicate Installation Check ---
 if [ -d "$INSTALL_DIR" ]; then
@@ -549,7 +549,7 @@ cd $INSTALL_DIR
 
 # Fetch source code
 log_info "Fetching latest source code..."
-curl -sSL https://github.com/cyber-wahid/logicpanel/archive/refs/heads/main.tar.gz | tar xz --strip-components=1
+curl -sSL https://github.com/logicwahid/logicpanel/archive/refs/heads/main.tar.gz | tar xz --strip-components=1
 
 # Create SSL management scripts
 log_info "Creating SSL management scripts..."
@@ -1276,9 +1276,9 @@ If SSL is not working immediately:
 
 📚 DOCUMENTATION & SUPPORT
 
-Documentation: https://github.com/cyber-wahid/logicpanel#readme
-GitHub Issues:  https://github.com/cyber-wahid/logicpanel/issues
-Repository:     https://github.com/cyber-wahid/logicpanel
+Documentation: https://github.com/logicwahid/logicpanel#readme
+GitHub Issues:  https://github.com/logicwahid/logicpanel/issues
+Repository:     https://github.com/logicwahid/logicpanel
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -1361,10 +1361,10 @@ echo -e "${GREEN}║${NC}     • Start panel:         cd ${INSTALL_DIR} && dock
 echo -e "${GREEN}║${NC}                                                                ${GREEN}║${NC}"
 echo -e "${GREEN}╚════════════════════════════════════════════════════════════════╝${NC}"
 echo ""
-echo -e "  ${CYAN}Thank you for choosing LogicPanel by cyber-wahid${NC} 💙"
+echo -e "  ${CYAN}Thank you for choosing LogicPanel by logicwahid${NC} 💙"
 echo ""
-echo -e "  ${MAGENTA}📚 Documentation: https://github.com/cyber-wahid/logicpanel${NC}"
-echo -e "  ${MAGENTA}🐛 Report Issues: https://github.com/cyber-wahid/logicpanel/issues${NC}"
+echo -e "  ${MAGENTA}📚 Documentation: https://github.com/logicwahid/logicpanel${NC}"
+echo -e "  ${MAGENTA}🐛 Report Issues: https://github.com/logicwahid/logicpanel/issues${NC}"
 echo ""
 echo -e "  ${YELLOW}💾 Installation details saved to: ${INSTALL_DIR}/INSTALLATION_SUMMARY.txt${NC}"
 echo -e "  ${YELLOW}🔐 Keep this file secure - it contains your credentials!${NC}"

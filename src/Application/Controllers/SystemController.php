@@ -276,7 +276,7 @@ class SystemController
 
         try {
             $client = new GuzzleClient();
-            $res = $client->request('GET', 'https://api.github.com/repos/cyber-wahid/logicpanel/releases/latest', [
+            $res = $client->request('GET', 'https://api.github.com/repos/logicwahid/logicpanel/releases/latest', [
                 'headers' => [
                     'Accept' => 'application/vnd.github.v3+json',
                     'User-Agent' => 'LogicPanel-System'

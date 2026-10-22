@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# LogicPanel - Uninstaller v3.1
-# Author: cyber-wahid
+# LogicPanel - Uninstaller v3.2
+# Author: logicwahid
 # Description: Completely removes LogicPanel and all its data.
 
 set -e
@@ -194,7 +194,7 @@ echo ""
 echo -e "  ${CYAN}All LogicPanel components have been removed.${NC}"
 echo ""
 echo -e "  ${YELLOW}To reinstall:${NC}"
-echo -e "  ${CYAN}curl -sSL https://raw.githubusercontent.com/cyber-wahid/logicpanel/main/install.sh | sudo bash${NC}"
+echo -e "  ${CYAN}curl -sSL https://raw.githubusercontent.com/logicwahid/logicpanel/main/install.sh | sudo bash${NC}"
 echo ""
-echo -e "  For more info, visit: ${CYAN}https://github.com/cyber-wahid/logicpanel${NC}"
+echo -e "  For more info, visit: ${CYAN}https://github.com/logicwahid/logicpanel${NC}"
 echo ""

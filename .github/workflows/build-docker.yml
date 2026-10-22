@@ -29,6 +29,10 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
+      - name: Lowercase repository name for Docker tags
+        id: repo
+        run: echo "name=$(echo '${{ github.repository }}' | tr '[:upper:]' '[:lower:]')" >> "$GITHUB_OUTPUT"
+
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v3
         with:
@@ -41,7 +45,7 @@ jobs:
         id: meta-app
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.REGISTRY }}/${{ github.repository }}
+          images: ${{ env.REGISTRY }}/${{ steps.repo.outputs.name }}
           tags: |
             type=ref,event=branch
             type=semver,pattern={{version}}
@@ -65,7 +69,7 @@ jobs:
         id: meta-dbp
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.REGISTRY }}/${{ github.repository }}/db-provisioner
+          images: ${{ env.REGISTRY }}/${{ steps.repo.outputs.name }}/db-provisioner
           tags: |
             type=ref,event=branch
             type=semver,pattern={{version}}
@@ -88,7 +92,7 @@ jobs:
         id: meta-gw
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.REGISTRY }}/${{ github.repository }}/gateway
+          images: ${{ env.REGISTRY }}/${{ steps.repo.outputs.name }}/gateway
           tags: |
             type=ref,event=branch
             type=semver,pattern={{version}}

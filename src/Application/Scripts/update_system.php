@@ -32,7 +32,7 @@ logMessage("Current version: $currentVersion");
 
 try {
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, 'https://api.github.com/repos/cyber-wahid/logicpanel/releases/latest');
+    curl_setopt($ch, CURLOPT_URL, 'https://api.github.com/repos/logicwahid/logicpanel/releases/latest');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_USERAGENT, 'LogicPanel-Updater');
     curl_setopt($ch, CURLOPT_TIMEOUT, 10);
@@ -130,7 +130,7 @@ if ($zip->open($zipFile) === TRUE) {
 }
 
 // Find extracted directory (GitHub creates a directory with commit hash)
-$extractedDirs = glob("$tempDir/cyber-wahid-logicpanel-*");
+$extractedDirs = glob("$tempDir/logicwahid-logicpanel-*");
 if (empty($extractedDirs)) {
     // Fallback for different naming conventions
     $extractedDirs = glob("$tempDir/*logicpanel-*");

@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 
 ###############################################################################
-# LogicPanel Auto-Update Script v3.1
-# Author: cyber-wahid
+# LogicPanel Auto-Update Script v3.2
+# Author: logicwahid
 # Description: Pulls latest version from GitHub and rebuilds containers
 # Supports: RHEL (DNF/YUM) and APT (Debian/Ubuntu) distributions
 ###############################################################################
 
 set -e  # Exit on error
 
-REPO_URL="https://github.com/cyber-wahid/logicpanel.git"
+REPO_URL="https://github.com/logicwahid/logicpanel.git"
 BRANCH="main"
 # Get script directory
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -94,7 +94,7 @@ else
     TEMP_DIR="/tmp/logicpanel_update_$TIMESTAMP"
     mkdir -p "$TEMP_DIR"
     
-    curl -L "https://github.com/cyber-wahid/logicpanel/archive/refs/heads/$BRANCH.zip" \
+    curl -L "https://github.com/logicwahid/logicpanel/archive/refs/heads/$BRANCH.zip" \
         -o "$TEMP_DIR/latest.zip" 2>&1 | tee -a "$LOG_FILE"
     
     # Extract (excluding certain directories)

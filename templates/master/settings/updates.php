@@ -8,7 +8,7 @@ $configFile = __DIR__ . '/../../../../config/settings.json';
 if (file_exists($configFile)) {
     $sysConfig = json_decode(file_get_contents($configFile), true) ?? [];
 }
-$repoUrl = $_ENV['REPO_URL'] ?? $sysConfig['repo_url'] ?? 'https://github.com/cyber-wahid/logicpanel';
+$repoUrl = $_ENV['REPO_URL'] ?? $sysConfig['repo_url'] ?? 'https://github.com/logicwahid/logicpanel';
 $docsUrl = $_ENV['DOCS_URL'] ?? $sysConfig['docs_url'] ?? (rtrim($repoUrl, '/') . '#readme');
 
 ob_start();

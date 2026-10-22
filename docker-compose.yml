@@ -88,7 +88,7 @@ services:
 
   # LogicPanel Application (The Dashboard)
   app:
-    image: ghcr.io/cyber-wahid/logicpanel:latest
+    image: ghcr.io/logicwahid/logicpanel:latest
     build: .
     container_name: logicpanel_app
     restart: unless-stopped
@@ -149,7 +149,7 @@ services:
 
     # Terminal Gateway (PHP Ratchet Sidecar)
   terminal-gateway:
-    image: ghcr.io/cyber-wahid/logicpanel/gateway:latest
+    image: ghcr.io/logicwahid/logicpanel/gateway:latest
     build: ./services/gateway
     container_name: logicpanel_gateway
     restart: unless-stopped
@@ -291,7 +291,7 @@ services:
 
   # DB Provisioner Service (Microservice)
   db-provisioner:
-    image: ghcr.io/cyber-wahid/logicpanel/db-provisioner:latest
+    image: ghcr.io/logicwahid/logicpanel/db-provisioner:latest
     build: ./docker/db-provisioner
     container_name: logicpanel_db_provisioner
     restart: unless-stopped
