@@ -250,14 +250,20 @@ class AccountController
             $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https')) ? 'https' : 'http';
             $userPanelUrl = $protocol . '://' . $userPanelUrlHost;
 
+            $data = (array)($request->getParsedBody() ?? []);
+            $queryParams = (array)($request->getQueryParams() ?? []);
+            $goto = $data['goto'] ?? ($queryParams['goto'] ?? '');
+            $gotoPath = !empty($goto) ? '/' . ltrim((string)$goto, '/') : '/';
+            $separator = (strpos($gotoPath, '?') !== false) ? '&' : '?';
+
             return $this->jsonResponse($response, [
                 'result' => 'success',
                 'token' => $token,
-                'redirect_url' => rtrim($userPanelUrl, '/') . '/?token=' . $token,
+                'redirect_url' => rtrim($userPanelUrl, '/') . $gotoPath . $separator . 'token=' . $token,
                 'message' => "Logged in as {$user->username}"
             ]);
         } catch (\Exception $e) {
-            return $this->jsonResponse($response, ['error' => 'Failed to generate token'], 500);
+            return $this->jsonResponse($response, ['error' => 'Failed to generate token: ' . $e->getMessage()], 500);
         }
     }
 

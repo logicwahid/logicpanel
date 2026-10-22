@@ -41,6 +41,10 @@ return function (App $app) {
         // ─── Services by Account ──────────────────────────────────
         $group->get('/accounts/{accountId}/services', [MasterServiceController::class, 'listForAccount']);
         $group->post('/accounts/{accountId}/services', [MasterServiceController::class, 'createForAccount']);
+        $group->post('/accounts/{accountId}/services/{serviceId}/start', [MasterServiceController::class, 'startForAccount']);
+        $group->post('/accounts/{accountId}/services/{serviceId}/stop', [MasterServiceController::class, 'stopForAccount']);
+        $group->post('/accounts/{accountId}/services/{serviceId}/restart', [MasterServiceController::class, 'restartForAccount']);
+        $group->get('/accounts/{accountId}/stats', [MasterServiceController::class, 'statsForAccount']);
         
         // ─── Databases by Account ─────────────────────────────────
         $group->get('/accounts/{accountId}/databases', [MasterDatabaseController::class, 'listForAccount']);
