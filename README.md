@@ -58,7 +58,24 @@ Once installation finishes, your panel is immediately live:
 * **🔒 Automatic Free SSL**: Let's Encrypt SSL certificates are requested and renewed automatically for all your domains.
 * **💻 In-Browser Web Terminal & File Manager**: Edit code, upload zip files, and access your app's shell directly from your browser.
 * **🛡️ 100% Docker Container Isolation**: Every app runs in its own sandbox — if one site breaks, no other site on your server is affected.
-* **💼 Billing Integration Ready**: Fully automated provisioning module for **Blesta** and **WHMCS** included.
+
+---
+
+## 💼 Blesta Billing Module (Automated Hosting Sales)
+
+LogicPanel includes an official, enterprise-grade provisioning module for **Blesta** (v4.x and v5.x+) with automated account creation, deep 1-click SSO (Dashboard, File Manager, Web Terminal, Databases), live container power controls, and resource quota monitoring.
+
+### Quick Setup for Blesta:
+1. Download `logicpanel-blesta-module.zip` from this repository.
+2. Unzip directly into your Blesta root folder (or upload & extract via cPanel/Plesk):
+   ```bash
+   unzip logicpanel-blesta-module.zip -d /var/www/blesta/
+   ```
+3. In **Blesta Admin**, navigate to **Settings** > **Company** > **Modules** > **Available** and click **Install** next to **LogicPanel**.
+4. Click **Add Server** and enter your server IP, API Key (generated in LogicPanel under **API Keys**), and default ports (`9999` master, `7777` user).
+5. Create your hosting packages and link them to your LogicPanel packages!
+
+*📘 Complete step-by-step Bengali guide: [components/modules/logicpanel/README.md](components/modules/logicpanel/README.md)*
 
 ---
 
